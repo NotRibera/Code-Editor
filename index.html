@@ -10,37 +10,25 @@
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="left">
-            <label><i class="fa-brands fa-html5"></i>HTML</label>
-            <textarea id="html-code" onkeyup="run()"></textarea>
-
-            <label><i class="fa-brands fa-css3-alt"></i> Css</label>
-            <textarea id="css-code" onkeyup="run()"></textarea>
-
-            <label><i class="fa-brands fa-js"></i> Javascript</label>
-            <textarea id="js-code" onkeyup="run()"></textarea>
+    <div class="code-editor">
+        <div class="code">
+            <div class="html-code">
+                <h1><img src="images/html.png" alt="">HTML</h1>
+                <textarea></textarea>
+            </div>
+            <div class="css-code">
+                <h1><img src="images/CSS.png" alt="">CSS</h1>
+                <textarea></textarea>
+            </div>
+            <div class="js-code">
+                <h1><img src="images/js.png" alt="">JS</h1>
+                <textarea spellcheck="false"></textarea>
+            </div>
         </div>
-
-        <div class="right">
-            <label><i class="fa-solid fa-play"></i> output</label>
-            <iframe id="output"></iframe>
-        </div>
+        <iframe id="result"></iframe>
     </div>
 
-    <script>
-        function run() {
-            let htmlcode = document.getElementById("html-code").value;
-            let csscode = document.getElementById("css-code").value;
-            let jscode = document.getElementById("js-code").value;
-            let output = document.getElementById("output");
-
-            output.contentDocument.body.innerHTML = htmlcode + "<style>" + csscode + "</style>";
-            output.contentWindow.eval(jscode);
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
