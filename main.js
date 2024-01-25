@@ -1,3 +1,4 @@
+    <!-- 
 const html_code = document.querySelector('.html-code textarea');
 const css_code = document.querySelector('.css-code textarea');
 const js_code = document.querySelector('.js-code textarea');
@@ -21,3 +22,14 @@ js_code.onkeyup = () => run();
 html_code.value = localStorage.html_code;
 css_code.value = localStorage.css_code;
 js_code.value = localStorage.js_code;
+-->
+
+function run() {
+            let htmlcode = document.getElementById("html-code").value;
+            let csscode = document.getElementById("css-code").value;
+            let jscode = document.getElementById("js-code").value;
+            let output = document.getElementById("output");
+
+            output.contentDocument.body.innerHTML = htmlcode + "<style>" + csscode + "</style>";
+            output.contentWindow.eval(jscode);
+        }
